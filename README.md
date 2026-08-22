@@ -1,8 +1,17 @@
 # ClaudeHere
 
-![ClaudeHere icon](assets/icone.png)
+![ClaudeHere — Claude Code and OpenClaude shortcuts installed in the Windows Explorer right-click context menu](assets/icone.png)
 
-**Open Claude Code or OpenClaude straight from any folder. No terminal, no typing commands by hand.**
+**Open Claude Code or OpenClaude straight from any folder in Windows. No terminal, no typing commands by hand.**
+
+## Features
+
+- **Adds Claude Code and OpenClaude to the right-click context menu of any Windows folder** — open, continue, or resume history where you actually are.
+- **Two clicks, no terminal**: go from right-click to a working Claude session in seconds.
+- **Optional "dangerously skip permissions" entries** (`--dangerously-skip-permissions`) for frictionless, one-click runs.
+- **Bilingual UI**: English or Portuguese (`pt-br`).
+- **Pick the icon**: the official Claude Code or OpenClaude logo in your menu.
+- **Clean remove**: one click deletes every menu entry and icon from the Windows registry.
 
 ## The problem
 
@@ -12,7 +21,7 @@ Claude Code and OpenClaude are CLI tools, which means the usual ritual: **open a
 
 ClaudeHere is a small app that drops both CLIs right into the **right-click menu of any folder on Windows**. Install it once, and the next time you need Claude in a specific directory you just right click, pick the option, and you are in. **Two clicks.** That is the whole difference.
 
-## What appears in the menu
+## What appears in the Windows right-click menu
 
 Depending on what you chose during setup, right clicking a folder can show any of these:
 
@@ -27,7 +36,7 @@ You choose which ones show up. No bloat, just the entries you actually use.
 
 Everything fits in a single small window:
 
-![ClaudeHere interface screenshot — choose language (English/Portuguese), platform (Claude Code or OpenClaude), context menu icon logo, and which right-click options to install on Windows Explorer](assets/example.png)
+![ClaudeHere interface screenshot — choose language (English/Portuguese), platform (Claude Code or OpenClaude), context menu icon logo, and which right-click options to install on Windows Explorer](assets/app-interface.png)
 
 - **Language**: `English` or `Portuguese`.
 - **Platform**: `Claude Code` or `OpenClaude`.
@@ -39,7 +48,7 @@ A status line at the bottom tells you whether it worked or what went wrong, so y
 
 Hit **Install** and the menu entries appear right away. Changed your mind later? Open the app, hit **Remove**, and everything goes away, icon included.
 
-## Notes
+## Requirements & Development
 
 - **Windows only**, and installing requires administrator rights.
 - Run it in development with `python main.py`.
