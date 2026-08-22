@@ -1,6 +1,6 @@
 # ClaudeHere
 
-<img src="assets/icone.png" alt="ClaudeHere — Claude Code and OpenClaude shortcuts installed in the Windows Explorer right-click context menu" width="64">
+<img src="assets/icone.png" alt="ClaudeHere — Claude Code and OpenClaude shortcuts installed in the Windows Explorer right-click context menu" width="128">
 
 **Open Claude Code or OpenClaude straight from any folder in Windows. No terminal, no typing commands by hand.**
 
