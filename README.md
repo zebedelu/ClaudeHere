@@ -32,11 +32,11 @@ Depending on what you chose during setup, right clicking a folder can show any o
 
 You choose which ones show up. No bloat, just the entries you actually use.
 
+![Result after installing ClaudeHere: Windows Explorer right-click context menu on a folder showing Open With ClaudeCode, Continue With ClaudeCode, and ClaudeCode's History entries](assets/context-menu-result.png)
+
 ## The interface
 
 Everything fits in a single small window:
-
-![ClaudeHere interface screenshot — choose language (English/Portuguese), platform (Claude Code or OpenClaude), context menu icon logo, and which right-click options to install on Windows Explorer](assets/app-interface.png)
 
 - **Language**: `English` or `Portuguese`.
 - **Platform**: `Claude Code` or `OpenClaude`.
