@@ -27,6 +27,8 @@ You choose which ones show up. No bloat, just the entries you actually use.
 
 Everything fits in a single small window:
 
+![ClaudeHere interface screenshot — choose language (English/Portuguese), platform (Claude Code or OpenClaude), context menu icon logo, and which right-click options to install on Windows Explorer](assets/example.png)
+
 - **Language**: `English` or `Portuguese`.
 - **Platform**: `Claude Code` or `OpenClaude`.
 - **Logo**: which icon the menu shows, whichever you prefer out of the two official ones.
