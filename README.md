@@ -1,6 +1,6 @@
 # ClaudeHere
 
-![ClaudeHere icon](icone.png)
+![ClaudeHere icon](assets/icone.png)
 
 **Open Claude Code or OpenClaude straight from any folder. No terminal, no typing commands by hand.**
 
