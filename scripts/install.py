@@ -17,7 +17,7 @@ def install_aplication(app, logo, cli_name, mark, lang):
         if response.status_code == 200:
             os.makedirs(LOGO_BASE_DIR, exist_ok=True)
 
-            logo_dir = os.path.join(LOGO_BASE_DIR, LOGO_FILE_NAME)
+            logo_dir = os.path.join(LOGO_BASE_DIR, LOGO_FILE_NAME).replace("/","\\")
 
             with open(logo_dir, "wb") as file:
                 file.write(response.content)

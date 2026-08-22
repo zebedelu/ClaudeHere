@@ -177,7 +177,6 @@ class ClaudeHere(App):
     def install(self):
         global claude_here_installed
 
-        logo = ""
         mark_for_install_option = [
             widget.value for widget in self.query(".mark_for_install_option")
         ]

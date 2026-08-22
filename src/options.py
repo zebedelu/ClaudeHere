@@ -20,7 +20,7 @@ ALIAS = {
 }
 
 LOGO_BASE_URL = "https://raw.githubusercontent.com/zebedelu/ClaudeHere/refs/heads/master/icons/"
-LOGO_BASE_DIR = "%LOCALAPPDATA%/ClaudeHere/"
+LOGO_BASE_DIR = "%LOCALAPPDATA%\\ClaudeHere\\"
 LOGO_FILE_NAME = "icon.ico"
 LOGOS = {
     "claudecode":{
