@@ -13,6 +13,8 @@ from scripts.detect_installed import detect_if_installed
 from scripts.install import install_aplication
 from scripts.remove import remove_aplication
 
+from src.config import LOGOS
+
 claude_here_installed = False
 
 class ClaudeHere(App):
@@ -32,6 +34,7 @@ class ClaudeHere(App):
         yield Header()
 
         with Vertical(id="painel"):
+            yield Static("Language",id="language_title")
             yield Select(
                 [
                     ("English", "en-us"),
@@ -44,6 +47,7 @@ class ClaudeHere(App):
                 classes="lang"
             )
 
+            yield Static("Platform",id="cli_title")
             with Horizontal(id="choice"):
                 yield RadioSet(
                     *[RadioButton(
@@ -53,6 +57,20 @@ class ClaudeHere(App):
                     for n, option in enumerate(OPTIONS)],
                     id="install_option"
                 )
+
+            yield Static("Logos",id="logos_title")
+
+            yield RadioSet(
+                *[RadioButton(
+                    option["name"],
+                    value=(True if n == 0 else False),
+                    id="logo_option_"+option["id"])
+                for n, option in enumerate(LOGOS)],
+                id="logo"
+            )
+
+            yield Static("Options",id="options_title")
+
             yield Checkbox(
                 "",
                 value=True,

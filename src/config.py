@@ -75,3 +75,16 @@ REGEDIT_INSTALL_PATHS = {
 }
 UNIVERSAL_INITIAL_COMMAND = '"C:\Windows\System32\cmd.exe" /c "cd /d %1 && '
 UNIVERSAL_END_COMMAND = '"'
+
+LOGOS = [
+    {
+        "name":"Claude Code Official Logo",
+        "id":"claudecode",
+        "url":""
+    },
+    {
+        "name":"Open Claude Official Logo",
+        "id":"openclaude",
+        "url":""
+    }
+]

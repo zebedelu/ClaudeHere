@@ -42,10 +42,12 @@ CSS = """
         color: grey;
     }
     #install_option {
-        margin-top: 2;
         layout: horizontal;    /* radios lado a lado DENTRO do RadioSet */
         height: auto;          /* altura ajusta ao conteúdo */
         width: auto;           /* largura ajusta ao conteúdo */
         margin-right: 4;       /* espaço entre o RadioSet e o próximo elemento */
+    }
+    #options_title, #cli_title, #logos_title, #language_title {
+        margin-top: 2;
     }
 """
