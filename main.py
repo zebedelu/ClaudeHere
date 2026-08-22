@@ -7,13 +7,11 @@ from textual.widgets import Button, Checkbox, Footer, Header, Select, Static, Ra
 from textual import on
 
 from style.style import CSS
-from src.options import OPTIONS, ALIAS
+from src.options import OPTIONS, ALIAS, LOGOS
 from lang.languages import langs
 from scripts.detect_installed import detect_if_installed
 from scripts.install import install_aplication
 from scripts.remove import remove_aplication
-
-from src.config import LOGOS
 
 claude_here_installed = False
 
@@ -22,6 +20,7 @@ class ClaudeHere(App):
     install_option = OPTIONS[0]["name"]
     install_option_cli = OPTIONS[0]["id"]
     language = "en-us"
+    install_option_logo = "claudecode"
 
     def __init__(self):
         super().__init__()
@@ -34,7 +33,7 @@ class ClaudeHere(App):
         yield Header()
 
         with Vertical(id="painel"):
-            yield Static("Language",id="language_title")
+            yield Static("",id="language_title", classes="lang")
             yield Select(
                 [
                     ("English", "en-us"),
@@ -47,7 +46,7 @@ class ClaudeHere(App):
                 classes="lang"
             )
 
-            yield Static("Platform",id="cli_title")
+            yield Static("",id="cli_title",classes="lang")
             with Horizontal(id="choice"):
                 yield RadioSet(
                     *[RadioButton(
@@ -65,11 +64,11 @@ class ClaudeHere(App):
                     option["name"],
                     value=(True if n == 0 else False),
                     id="logo_option_"+option["id"])
-                for n, option in enumerate(LOGOS)],
-                id="logo"
+                for n, option in enumerate(LOGOS.values())],
+                id="logo_option"
             )
 
-            yield Static("Options",id="options_title")
+            yield Static("",id="options_title", classes="lang")
 
             yield Checkbox(
                 "",
@@ -146,12 +145,14 @@ class ClaudeHere(App):
             message = langs[self.language][widget.id]
             message = message.replace("{$1}", self.install_option)
 
-            if isinstance(widget, Checkbox):
+            if isinstance(widget, Checkbox) or isinstance(widget, Button):
                 widget.label = message
             elif isinstance(widget, Static):
-                widget.render(message)
-            elif isinstance(widget, Button):
-                widget.label = message
+                widget.update(message)
+
+    @on(RadioSet.Changed, "#logo_option")
+    def change_logo(self, event: RadioSet.Changed):
+        self.install_option_logo = event.pressed.id.replace("logo_option_","")
 
     @on(RadioSet.Changed, "#install_option")
     def change_name(self, event: RadioSet.Changed):
@@ -175,16 +176,18 @@ class ClaudeHere(App):
     @on(Button.Pressed, "#install")
     def install(self):
         global claude_here_installed
+
+        logo = ""
         mark_for_install_option = [
             widget.value for widget in self.query(".mark_for_install_option")
         ]
 
-        success, message = install_aplication(self, self.install_option_cli, mark_for_install_option, self.language)
+        success, message = install_aplication(self, self.install_option_logo, self.install_option_cli, mark_for_install_option, self.language)
 
         if success:
             self.query_one("#status", Static).update(langs[self.language]["concluded"])
         else:
-            self.query_one("#status", Static).update({langs[self.language]["something_went_wrong"]}+{message})
+            self.query_one("#status", Static).update(langs[self.language]["something_went_wrong"]+" "+message)
 
         claude_here_installed = detect_if_installed()
         self.change_remove_button()

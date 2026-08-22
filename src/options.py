@@ -18,3 +18,19 @@ ALIAS = {
     "claudecode":0,
     "openclaude":1
 }
+
+LOGO_BASE_URL = "https://raw.githubusercontent.com/zebedelu/ClaudeHere/refs/heads/main/icons/"
+LOGO_BASE_DIR = "%LOCALAPPDATA%/ClaudeHere/data/"
+LOGO_FILE_NAME = "icon.ico"
+LOGOS = {
+    "claudecode":{
+        "name":"Claude Code Official Logo",
+        "id":"claudecode",
+        "url":"claudecode.ico"
+    },
+    "openclaude":{
+        "name":"Open Claude Official Logo",
+        "id":"openclaude",
+        "url":"openclaude.ico"
+    }
+}

@@ -18,7 +18,10 @@ langs = {
 
         "concluded": "Successfully completed!",
         "removed_concluded": "Successfully removed!",
-        "something_went_wrong": "Something went wrong."
+        "something_went_wrong": "Something went wrong.",
+        "options_title":"Options",
+        "cli_title":"Platform",
+        "language_title":"Language"
     },
     "pt-br":{
         "open_open": "Abrir Com {$1}",
@@ -37,6 +40,9 @@ langs = {
 
         "concluded": "Concluido com sucesso!",
         "removed_concluded": "Removido com sucesso!",
-        "something_went_wrong": "Algo deu errado."
+        "something_went_wrong": "Algo deu errado.",
+        "options_title":"Opções",
+        "cli_title":"Plataforma",
+        "language_title": "Linguagem"
     }
 }
