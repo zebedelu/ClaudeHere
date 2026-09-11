@@ -71,6 +71,34 @@ REGEDIT_INSTALL_PATHS = {
             "open_history_dsp",
             "claude --resume --dangerously-skip-permissions"
         ]
+    ],
+    "opencode":
+    [
+        [
+            "opencode",
+            "open_open",
+            "opencode"
+        ],
+        [
+            "opencode continue",
+            "open_continue",
+            "opencode --continue"
+        ],
+        [
+            "opencode history",
+            "open_history",
+            "opencode session list"
+        ],
+        [
+            "opencode (dsp)",
+            "open_open_dsp",
+            "opencode --auto"
+        ],
+        [
+            "opencode continue (dsp)",
+            "open_continue_dsp",
+            "opencode --continue --auto"
+        ]
     ]
 }
 UNIVERSAL_INITIAL_COMMAND = '"C:\Windows\System32\cmd.exe" /c "cd /d %1 && '

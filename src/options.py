@@ -12,11 +12,19 @@ OPTIONS = [
         "avaiable":[
             1,2,3
         ]
+    },
+    {
+        "name": "OpenCode",
+        "id": "opencode",
+        "avaiable":[
+            1,2,3
+        ]
     }
 ]
 ALIAS = {
     "claudecode":0,
-    "openclaude":1
+    "openclaude":1,
+    "opencode":2
 }
 
 LOGO_BASE_URL = "https://raw.githubusercontent.com/zebedelu/ClaudeHere/refs/heads/master/icons/"
@@ -32,5 +40,10 @@ LOGOS = {
         "name":"Open Claude Official Logo",
         "id":"openclaude",
         "url":"openclaude.ico"
+    },
+    "opencode":{
+        "name":"OpenCode Official Logo",
+        "id":"opencode",
+        "url":"opencode.ico"
     }
 }

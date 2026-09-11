@@ -8,6 +8,7 @@ from textual import on
 
 from style.style import CSS
 from src.options import OPTIONS, ALIAS, LOGOS
+from src.config import REGEDIT_INSTALL_PATHS
 from lang.languages import langs
 from scripts.detect_installed import detect_if_installed
 from scripts.install import install_aplication
@@ -25,6 +26,15 @@ class ClaudeHere(App):
     def __init__(self):
         super().__init__()
 
+    def build_options(self):
+        for button in REGEDIT_INSTALL_PATHS[self.install_option_cli]:
+            yield Checkbox(
+                "",
+                value=True,
+                id=button[1],
+                classes="lang mark_for_install_option"
+            )
+            
     def on_mount(self):
         self.update_language()
         self.change_remove_button()
@@ -70,47 +80,8 @@ class ClaudeHere(App):
 
             yield Static("",id="options_title", classes="lang")
 
-            yield Checkbox(
-                "",
-                value=True,
-                id="open_open",
-                classes="lang mark_for_install_option"
-            )
-
-            yield Checkbox(
-                "",
-                value=True,
-                id="open_continue",
-                classes="lang mark_for_install_option"
-            )
-
-            yield Checkbox(
-                "",
-                value=False,
-                id="open_history",
-                classes="lang mark_for_install_option"
-            )
-            
-            yield Checkbox(
-                "",
-                value=False,
-                id="open_open_dsp",
-                classes="lang mark_for_install_option"
-            )
-
-            yield Checkbox(
-                "",
-                value=False,
-                id="open_continue_dsp",
-                classes="lang mark_for_install_option"
-            )
-
-            yield Checkbox(
-                "",
-                value=False,
-                id="open_history_dsp",
-                classes="lang mark_for_install_option"
-            )
+            with Vertical(id="options"):
+                yield from self.build_options()
 
             with Horizontal(id="buttons"):
                 yield Button(
@@ -155,13 +126,12 @@ class ClaudeHere(App):
         self.install_option_logo = event.pressed.id.replace("logo_option_","")
 
     @on(RadioSet.Changed, "#install_option")
-    def change_name(self, event: RadioSet.Changed):
-        self.install_option = OPTIONS[
-            ALIAS[
-                event.pressed.id.replace("install_option_","")
-            ]
-        ]["name"]
+    async def change_name(self, event: RadioSet.Changed):
         self.install_option_cli = event.pressed.id.replace("install_option_","")
+        self.install_option = OPTIONS[ALIAS[self.install_option_cli]]["name"]
+        options = self.query_one("#options", Vertical)
+        await options.remove_children()
+        await options.mount_all(self.build_options())
         self.update_language()
 
     @on(Select.Changed, "#config_language")

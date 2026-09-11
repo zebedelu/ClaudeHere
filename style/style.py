@@ -5,9 +5,15 @@ CSS = """
 
     #painel {
         width: 70;
-        height: 50;
+        height: auto;
+        max-height: 100%;
+        overflow-y: auto;
         border: round green;
-        padding: 1 2;
+        padding: 2 2;
+    }
+
+    Checkbox, RadioButton, RadioSet, Button {
+        border: none;
     }
 
     Button {
@@ -28,8 +34,19 @@ CSS = """
     #buttons {
         align: center middle;
     }
-
+    #buttons > * {
+        padding: 1 5;
+    }
+    
     #options_title, #cli_title, #logos_title, #buttons, #status {
-        margin-top: 2;
+        margin-top: 1;
+    }
+
+    #options, #buttons, #choice {
+        height: auto;
+    }
+
+    .mark_for_install_option, #logo_option RadioButton {
+        margin-top: 1;
     }
 """
